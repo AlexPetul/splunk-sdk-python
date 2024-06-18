@@ -604,7 +604,8 @@ class Context:
         """
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         if self.scheme == "https":
-            sock = ssl.wrap_socket(sock)
+            context = ssl.create_default_context()
+            sock = context.wrap_socket(sock, server_hostname=self.host)
         sock.connect((socket.gethostbyname(self.host), self.port))
         return sock
 
