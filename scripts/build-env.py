@@ -26,7 +26,7 @@ DEFAULT_CONFIG = {
     'port': '8089',
     'username': 'admin',
     'password': 'changed!',
-    'scheme': 'https',
+    'scheme': 'http',
     'version': '8.0'
 }
 
